@@ -12,7 +12,7 @@ pipeline {
     stage('Test') {
       steps {
         echo 'Testing..'
-        sh 'npm run test'
+        bat(script: 'cd juenkins-app & npm run test', label: 'test')
       }
     }
 
