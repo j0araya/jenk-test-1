@@ -5,6 +5,7 @@ pipeline {
       steps {
         echo 'Building..'
         bat(script: 'cd jenkins-app', label: 'cd')
+        bat(script: 'ls', label: 'ls')
         bat(script: 'npm run build', label: 'build')
       }
     }
