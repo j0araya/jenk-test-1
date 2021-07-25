@@ -4,8 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Building..'
-        bat(script: 'cd jenkins-app', label: 'cd')
-        bat(script: 'npm i', label: 'install')
+        bat(script: 'cd jenkins-app & npm i', label: 'install')
         bat(script: 'cd jenkins-app & npm run build', label: 'cd')
       }
     }
