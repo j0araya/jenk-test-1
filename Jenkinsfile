@@ -5,7 +5,8 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Building..'
-        sh 'cd jenkins-app | npm run build'
+        sh 'cd jenkins-app'
+        sh 'npm run build'
       }
     }
 
