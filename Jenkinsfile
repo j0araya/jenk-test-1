@@ -1,20 +1,19 @@
 pipeline {
   agent any
   stages {
-
     stage('Build') {
       steps {
         echo 'Building..'
-        sh 'cd jenkins-app'
-        sh 'npm run build'
+        bat(script: 'cd jenkins-app', label: 'cd')
+        bat(script: 'npm run build', label: 'build')
       }
     }
 
-     stage('Test') {
-        steps {
-            echo 'Testing..'
-            sh 'npm run test'
-        }
+    stage('Test') {
+      steps {
+        echo 'Testing..'
+        sh 'npm run test'
+      }
     }
 
     stage('error') {
