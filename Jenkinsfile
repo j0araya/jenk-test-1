@@ -1,15 +1,19 @@
 pipeline {
-  agent {
-    node {
-      label 'start'
-    }
-
-  }
+  agent any
   stages {
-    stage('paso1') {
+
+    stage('Build') {
       steps {
+        echo 'Building..'
         sh 'npm run build'
       }
+    }
+
+     stage('Test') {
+        steps {
+            echo 'Testing..'
+            sh 'npm run test'
+        }
     }
 
     stage('error') {
